@@ -1,7 +1,7 @@
 from random import choice
 from os import system
 from time import sleep
-from datetime import date
+from datetime import date, datetime
 
 def ask(numberList,inputPhrase,internalCycle):
     NoT = int(input("Numero domande => "))
@@ -28,7 +28,7 @@ def ask(numberList,inputPhrase,internalCycle):
             if word not in list(listAll[numberList].keys()) or randomA not in listAll[numberList][word]:
                 LoW.append(randomA)
                 print("SBAGLIATO!")
-                print("La risposta giusta era", randomKey)
+                print("La risposta giusta era '" + randomKey + "'")
                 break
         else:
             NoC += 1
@@ -43,7 +43,8 @@ def ask(numberList,inputPhrase,internalCycle):
     print("Hai totalizzato : ", float(100*NoC/NoT))
 
     file_object = open('log.txt', 'a')
-    file_object.write(str(date.today()) + "\n")
+    file_object.write(str(datetime.now()) + "\n")
+    file_object.write("MODALITA' " +  str(numberList) + "\n") 
     file_object.write("RISPOSTE GIUSTE => "+ str(NoC) + "/"+ str(NoT) + "\n")
     file_object.write("DOMANDE SBAGLIATE => " + str(LoW) + "\n")
     file_object.write("Hai totalizzato : "+ str(float(100*NoC/NoT))+ "\n")
@@ -267,7 +268,7 @@ listAll = [
             "force",
             "tend"
         ],
-        "object infintive":
+        "object inf":
         [
             "make",
             "let"
@@ -320,7 +321,7 @@ while True:
     if a == 1:
         ask(0,"(do,make,have,take,give) => ",True)
     elif a == 2:    
-        ask(1,"(to,object to,object infintive,ing,ing/to) => ",False)
+        ask(1,"(to,object to,object inf,ing,ing/to) => ",False)
     elif a == 3:
         file = open('log.txt',mode='r')
         print(file.read())
