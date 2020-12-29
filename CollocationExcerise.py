@@ -21,13 +21,13 @@ def ask(numberList,inputPhrase,internalCycle):
         while res.replace(" ","") == "":
             res = input(inputPhrase).lower().replace("\n","")
 
-        if internalCycle:
-            res.replace(" ", "")
+        if internalCycle == False:
+            res = res.replace(" ", "")
 
         for word in res.split(" "):
             if word not in list(listAll[numberList].keys()) or randomA not in listAll[numberList][word]:
                 LoW.append(randomA)
-                print("SBAGLIATO!")
+                print("SBAGLIATO! ")
                 print("La risposta giusta era '" + randomKey + "'")
                 break
         else:
@@ -257,7 +257,7 @@ listAll = [
             "seem",
             "tend"
         ],
-        "object to":
+        "objectto":
         [
             "advise",
             "allow",
@@ -268,7 +268,7 @@ listAll = [
             "force",
             "tend"
         ],
-        "object inf":
+        "objectinf":
         [
             "make",
             "let"
