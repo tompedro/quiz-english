@@ -34,7 +34,6 @@ def ask(numberList,inputPhrase,internalCycle):
             NoC += 1
             print("GIUSTO!")
 
-
         sleep(1)
         system("clear")
 
@@ -187,6 +186,7 @@ listAll = [
             "a guess",
             "a holiday/vacation",
             "an interest in sth",
+            "an interest",
             "the lead",
             "a look",
             "medicine",
@@ -209,7 +209,9 @@ listAll = [
             "sb an answer",
             "birth",
             "sb a chance",
+            "a chance",
             "sb a choice",
+            "a choice",
             "credit to sb",
             "a cry of pain",
             "an example",
@@ -266,7 +268,7 @@ listAll = [
             "encourage",
             "expect",
             "force",
-            "tend"
+            "warn"
         ],
         "objectinf":
         [
