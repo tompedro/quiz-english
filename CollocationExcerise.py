@@ -257,7 +257,34 @@ listAll = [
             "prefer",
             "refuse",
             "seem",
-            "tend"
+            "tend",
+            "afford",
+            "appear",
+            "ask",
+            "beg",
+            "care",
+            "claim",
+            "consent",
+            "demand",
+            "expect",
+            "deserve",
+            "fail",
+            "hesitate",
+            "hope",
+            "offer",
+            "plan",
+            "prepare",
+            "pretend",
+            "promise",
+            "refuse",
+            "seem",
+            "struggle",
+            "swear",
+            "threaten",
+            "volunteer",
+            "wait",
+            "want",
+            "wish"
         ],
         "objectto":
         [
@@ -290,7 +317,30 @@ listAll = [
             "spend time",
             "waste time",
             "stop",
-            "recommend"
+            "advise",
+            "anticipate",
+            "appreciate",
+            "complete",
+            "consider",
+            "delay",
+            "deny",
+            "discuss",
+            "dislike",
+            "finish",
+            "mention",
+            "mind",
+            "postpone",
+            "practise",
+            "quit",
+            "recall",
+            "recollect",
+            "recommend",
+            "resent",
+            "resist",
+            "risk",
+            "suggest",
+            "tolerate",
+            "understand"
         ],
         "ing/to":
         [
@@ -301,7 +351,153 @@ listAll = [
             "like",
             "love",
             "prefer",
-            "start"
+            "start",
+            "forget",
+            "regret",
+            "remember",
+            "mean",
+            "need",
+            "try"
+            
+        ]
+    },
+    {
+        "to": [
+            "adapt",
+            "add",
+            "agree to",
+            "apologize",
+            "belong",
+            "consent",
+            "devote",
+            "happen",
+            "lead",
+            "listen",
+            "object",
+            "react",
+            "refer",
+            "reply",
+            "speak",
+            "talk",
+            "turn"
+        ],
+        "for": [
+            "admire",
+            "apologize",
+            "apply",
+            "ask",
+            "blame for",
+            "care",
+            "excuse",
+            "head",
+            "long",
+            "pay",
+            "pray",
+            "prepare",
+            "scold",
+            "search",
+            "vote",
+            "wait",
+            "wish",
+            "work"
+        ],
+        "from": [
+            "abstain",
+            "borrow",
+            "escape",
+            "graduate",
+            "hide",
+            "infer",
+            "prevent",
+            "prohibit",
+            "protect",
+            "recover",
+            "rescue",
+            "resign",
+            "retire",
+            "save",
+            "separate",
+            "stem",
+            "suffer"
+        ],
+        "at": [
+            "aim",
+            "arrive",
+            "glance",
+            "guess",
+            "hint",
+            "laugh",
+            "look",
+            "marvel",
+            "peer",
+            "point",
+            "smile",
+            "stare",
+            "wink"
+        ],
+        "on": [
+            "agree on",
+            "base",
+            "be",
+            "blame on",
+            "comment",
+            "concentrate",
+            "congratulate",
+            "count",
+            "depend",
+            "elaborate",
+            "impose",
+            "insist",
+            "play",
+            "pride",
+            "rely",
+            "work"
+        ],
+        "up": ["bring", "grow"],
+        "about": [
+            "argue su qualcosa",
+            "ask su qualcosa",
+            "boast",
+            "concern",
+            "decide",
+            "dream",
+            "forget",
+            "know",
+            "protest",
+            "think",
+            "worry"
+        ],
+        "with": [
+            "acquaint",
+            "agree with",
+            "associate",
+            "charge (accusare)",
+            "clutter",
+            "coinncide",
+            "collide",
+            "compare",
+            "comply",
+            "confront",
+            "confuse (confondere)",
+            "cover",
+            "cram",
+            "deal",
+            "discuss con",
+            "help",
+            "tamper"
+        ],
+        "in": [
+            "absorb",
+            "be engrossed",
+            "believe",
+            "confide con",
+            "implicate",
+            "involve",
+            "participate",
+            "result",
+            "specialize",
+            "succeed",
+            "trust in"
         ]
     }
 ]
@@ -312,7 +508,7 @@ while True:
     a = 0
     while a <= 0 or a > 4:
         system("clear")
-        print("Scegli la modalità : \n 1) DO,MAKE,HAVE,TAKE,GIVE \n 2) TO,ING... \n 3) VEDI LOGS \n 4) ESCI")
+        print("Scegli la modalità : \n 1) DO,MAKE,HAVE,TAKE,GIVE \n 2) TO,ING... \n 3) TO, ABOUT, WITH.... \n 4) VEDI LOGS \n 5) ESCI")
         try:
             a = int(input(" => "))
         except:
@@ -324,10 +520,12 @@ while True:
         ask(0,"(do,make,have,take,give) => ",True)
     elif a == 2:    
         ask(1,"(to,object to,object inf,ing,ing/to) => ",False)
-    elif a == 3:
+    elif a == 3:    
+        ask(2,"(to, for, from, at, up, on, about, with, in) => ",True)
+    elif a == 4:
         file = open('log.txt',mode='r')
         print(file.read())
         file.close()
         input("")
-    elif a == 4:
+    elif a == 5:
         quit()
